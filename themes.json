@@ -1,0 +1,32 @@
+[
+  {
+    "theme": "記録カルテPWA",
+    "headline": "手書きの記録が\nタブレット1台に",
+    "bgPrompt": "A care worker's hands holding a tablet in a bright small clinic reception area, an empty paper clipboard resting on the counter beside it. Shot on a 35mm lens at f/2.0, soft diffused natural window light from the left, muted navy and warm cream palette with a single coral accent, shallow depth of field, calm documentary photography, uncluttered composition with generous empty space in the upper third."
+  },
+  {
+    "theme": "OCR連携Excel帳票",
+    "headline": "紙からの転記が\n仕事から消えた",
+    "bgPrompt": "A stack of paper invoices on a wooden desk beside a laptop, a smartphone propped up as if photographing the top sheet. Shot on a 35mm lens at f/2.0, soft diffused natural window light from the left, muted navy and warm cream palette with a single coral accent, shallow depth of field, calm documentary photography, uncluttered composition with generous empty space in the upper third."
+  },
+  {
+    "theme": "長尺動画の短尺編集自動化",
+    "headline": "編集の月40時間を\n返してもらった",
+    "bgPrompt": "An editing desk at dusk with a large monitor showing an abstract timeline of colored blocks, an empty coffee cup and a closed notebook nearby, chair pushed back. Shot on a 35mm lens at f/2.0, soft diffused natural window light from the left, muted navy and warm cream palette with a single coral accent, shallow depth of field, calm documentary photography, uncluttered composition with generous empty space in the upper third."
+  },
+  {
+    "theme": "記録カルテPWA（現場の引き継ぎ）",
+    "headline": "引き継ぎの15分が\n1分になった",
+    "bgPrompt": "Two staff members standing at a counter in a small facility, one handing a tablet to the other, morning light across the floor. Shot on a 35mm lens at f/2.0, soft diffused natural window light from the left, muted navy and warm cream palette with a single coral accent, shallow depth of field, calm documentary photography, uncluttered composition with generous empty space in the upper third."
+  },
+  {
+    "theme": "OCR連携Excel帳票（月末処理）",
+    "headline": "月末の残業が\n定時に変わった",
+    "bgPrompt": "A tidy small office desk at early evening, a wall clock reading just past six, an empty in-tray and a closed laptop, warm lamp glow. Shot on a 35mm lens at f/2.0, soft diffused natural window light from the left, muted navy and warm cream palette with a single coral accent, shallow depth of field, calm documentary photography, uncluttered composition with generous empty space in the upper third."
+  },
+  {
+    "theme": "自動化の設計思想",
+    "headline": "AIに全部は\n任せない",
+    "bgPrompt": "A person's hand pausing over a laptop trackpad in a quiet workshop-like office, a printed checklist pinned to a corkboard behind, blurred background. Shot on a 35mm lens at f/2.0, soft diffused natural window light from the left, muted navy and warm cream palette with a single coral accent, shallow depth of field, calm documentary photography, uncluttered composition with generous empty space in the upper third."
+  }
+]
