@@ -37,6 +37,31 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      # 見出しは SVG で焼き込む方式（2026-07-18 の最終解）だが、SVG を描画する librsvg は
+      # @font-face の file:// 指定を読まず、fontconfig に登録されたフォントしか使えない。
+      # そのため OS 側に本物の Noto Sans CJK を入れ、スクリプトが指定する font-family 名
+      # (NotoSansJPBold) を alias でそこへ向ける。generate-ig-image.mjs は無改造のまま動く。
+      - name: Install Japanese font (fontconfig)
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq fonts-noto-cjk
+          mkdir -p ~/.config/fontconfig
+          cat > ~/.config/fontconfig/fonts.conf <<'EOF'
+          <?xml version="1.0"?>
+          <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+          <fontconfig>
+            <alias binding="strong">
+              <family>NotoSansJPBold</family>
+              <prefer><family>Noto Sans CJK JP</family></prefer>
+            </alias>
+          </fontconfig>
+          EOF
+          fc-cache -f
+          echo "--- 解決結果（NotoSansJPBold が実フォントに解決されること） ---"
+          fc-match "NotoSansJPBold:bold"
+          fc-match "NotoSansJPBold:bold" | grep -qi "notosanscjk" || {
+            echo "::error::NotoSansJPBold が Noto Sans CJK に解決されていない"; exit 1; }
+
       - name: Generate image
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
