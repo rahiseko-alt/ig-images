@@ -1,11 +1,14 @@
 name: generate-ig-image
 
 # Instagram 投稿用の画像を日次生成する。
-# buffer-refill routine（03:03 UTC）より前に終わらせる必要があるため 02:30 UTC に走らせる。
+# buffer-refill routine（03:03 UTC）より前に確実に終わらせるため、前日 17:30 UTC に走らせる。
+# GitHub Actions の schedule は不定に遅延する（2026-07-22 は約3時間遅延し 05:33 に発火、
+# routine 03:07 を追い越して前日画像が使い回された）。routine まで約9.5時間のバッファを取り、
+# 遅延を吸収する。毎時0分の混雑帯を避けて :30 に置く。
 # OPENAI_API_KEY は GitHub Secrets にのみ存在し、cloud environment には置かない。
 on:
   schedule:
-    - cron: "30 2 * * *"
+    - cron: "30 17 * * *"
   workflow_dispatch:
     inputs:
       theme_index:
